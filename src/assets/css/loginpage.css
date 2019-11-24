@@ -1,0 +1,351 @@
+@charset "utf-8";
+
+/* CSS Document */
+
+@import url('https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,500,500i,700,700i');
+
+/*font-family: 'Roboto', sans-serif;*/
+
+@import url('https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,500,500i,700,700i');
+
+/*font-family: 'Roboto', sans-serif;*/
+
+
+/*body{font-family: 'Roboto', sans-serif; margin:0px; padding:0px; background-color: #0763c8;
+background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100%25' height='100%25' viewBox='0 0 800 400'%3E%3Cdefs%3E%3CradialGradient id='a' cx='396' cy='281' r='514' gradientUnits='userSpaceOnUse'%3E%3Cstop offset='0' stop-color='%2301e2dc'/%3E%3Cstop offset='1' stop-color='%230763c8'/%3E%3C/radialGradient%3E%3ClinearGradient id='b' gradientUnits='userSpaceOnUse' x1='400' y1='148' x2='400' y2='333'%3E%3Cstop offset='0' stop-color='%23ffffff' stop-opacity='0'/%3E%3Cstop offset='1' stop-color='%23ffffff' stop-opacity='0.5'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect fill='url(%23a)' width='800' height='400'/%3E%3Cg fill-opacity='0.45'%3E%3Ccircle fill='url(%23b)' cx='267.5' cy='61' r='300'/%3E%3Ccircle fill='url(%23b)' cx='532.5' cy='61' r='300'/%3E%3Ccircle fill='url(%23b)' cx='400' cy='30' r='300'/%3E%3C/g%3E%3C/svg%3E");
+background-attachment: fixed;
+background-size: cover;}*/
+
+
+/*body{
+background-color: #330000;
+background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100%25' height='100%25' viewBox='0 0 800 400'%3E%3Cdefs%3E%3CradialGradient id='a' cx='396' cy='281' r='514' gradientUnits='userSpaceOnUse'%3E%3Cstop offset='0' stop-color='%23D18'/%3E%3Cstop offset='1' stop-color='%23330000'/%3E%3C/radialGradient%3E%3ClinearGradient id='b' gradientUnits='userSpaceOnUse' x1='400' y1='148' x2='400' y2='333'%3E%3Cstop offset='0' stop-color='%23FA3' stop-opacity='0'/%3E%3Cstop offset='1' stop-color='%23FA3' stop-opacity='0.5'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect fill='url(%23a)' width='800' height='400'/%3E%3Cg fill-opacity='0.4'%3E%3Ccircle fill='url(%23b)' cx='267.5' cy='61' r='300'/%3E%3Ccircle fill='url(%23b)' cx='532.5' cy='61' r='300'/%3E%3Ccircle fill='url(%23b)' cx='400' cy='30' r='300'/%3E%3C/g%3E%3C/svg%3E");
+background-attachment: fixed;
+background-size: cover;
+}*/
+
+body {
+    background-color: #77aa77;
+    background: url(../images/loginbgmain.jpg);
+    background-attachment: fixed;
+    background-size: cover;
+}
+
+.logo {
+    margin-bottom: 15px;
+    width: 110px;
+    float: left;
+    border-right: 1px solid #6f6f6f;
+    padding-right: 8px;
+}
+
+.logo img {
+    max-width: 100%;
+}
+
+.logo-text {
+    float: left;
+    padding-left: 10px;
+}
+
+.logo-text h2 {
+    font-size: 33px;
+    font-weight: 500;
+    color: #fff;
+}
+
+.logo-text h2 span {
+    color: rgba(255, 255, 255, .9);
+    font-weight: 300;
+    font-size: 30px;
+}
+
+.logo-text h2 span strong {
+    font-weight: 400;
+    color: rgba(255, 255, 255, 1);
+}
+
+.loginbox {
+    background-color: #ffffffc7;
+    min-height: 300px;
+    box-shadow: 18px 33px 25px rgba(0, 0, 0, .22);
+    padding: 15px;
+}
+
+.topmrgin {
+    margin-top: 65px;
+}
+
+.minusleft {
+    margin-left: -50px;
+}
+
+.intruction {
+    background: #329998;
+    background: -moz-linear-gradient(45deg, #329998 0%, #5cd19a 100%);
+    background: -webkit-linear-gradient(45deg, #329998 0%, #5cd19a 100%);
+    background: linear-gradient(45deg, #329998 0%, #5cd19a 100%);
+    filter: progid: DXImageTransform.Microsoft.gradient( startColorstr='#329998', endColorstr='#5cd19a', GradientType=1);
+    padding: 15px;
+    box-shadow: 0px 0px 15px rgba(0, 0, 0, .2);
+    min-height: 300px;
+    color: #fff;
+}
+
+.intruction .btn {
+    border-radius: 20px;
+    background-color: #fff;
+    color: #329998 !important;
+}
+
+.loginform h3 {
+    margin-top: 15px;
+    font-weight: 400;
+    margin-bottom: 15px;
+    text-align: center;
+    text-transform: uppercase;
+}
+
+.loginform h3 span {
+    font-size: 14px;
+    color: #666;
+    font-weight: 300;
+}
+
+.loginform label {
+    font-weight: 600;
+}
+
+input[type="date"],
+input[type="datetime-local"],
+input[type="email"],
+input[type="number"],
+input[type="password"],
+input[type="search-md"],
+input[type="search"],
+input[type="tel"],
+input[type="text"],
+input[type="time"],
+input[type="url"],
+textarea.md-textarea {
+    font-size: inherit;
+    height: 35px;
+}
+
+.btn-rounded {
+    border-radius: 20px;
+}
+
+.btn-light-green {
+    background-color: #37A098 !important;
+}
+
+.btn-light-blue {
+    background-color: #0065C3 !important;
+    color: #fff;
+}
+
+.btn-light-blue:hover {
+    color: #fff;
+}
+
+footer {
+    position: fixed;
+    right: 0;
+    left: 0;
+    margin: 0px auto;
+    bottom: 0;
+    padding: 10px 15px;
+    border: 1px solid rgba(0, 0, 0, .1);
+    color: #fff;
+    text-align: center;
+}
+
+footer a {
+    color: #fff;
+}
+
+.loginform P {
+    margin-top: 10px;
+}
+
+.form-control {
+    border-color: #c7b95d;
+    font-weight: 100;
+    background: transparent;
+}
+
+select,
+.select.form-control {
+    height: 35px;
+    -moz-appearance: none;
+    -webkit-appearance: none;
+    background: #fff url('/src/assets/images/select-dropdwn.png') no-repeat 95% 8px;
+    -webkit-transition: all .1s linear;
+    -moz-transition: all .1s linear;
+    transition: all .1s linear;
+    cursor: pointer;
+}
+
+.loginname {
+    font-size: 1.7em;
+    font-weight: 400;
+    padding: 56px 154px 41px 0px;
+    text-align: center;
+    color: #0058cb;
+}
+
+.loginform {
+    padding: 0px 15px;
+}
+
+.loginright {
+    margin: -15px;
+    min-height: 451px;
+    /* background-image:url(../images/loginbg.jpg); */
+    background-repeat: no-repeat;
+    box-sizing: border-box;
+    padding: 15px;
+    background-position: 27% 27%;
+    border-right: bac;
+    background: #dfe0938f;
+}
+
+.loginright h3 {
+    color: #000000;
+    font-weight: 500;
+    font-size: 20px;
+}
+
+.leftmargin {
+    margin-left: 21% !important;
+}
+
+.text {
+    text-transform: uppercase;
+    background: linear-gradient(to right, #009688 0%, #009688 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.l-form-pding {
+    padding: 0px 45px;
+}
+
+.captcha {
+    border: 1px solid #ccc;
+}
+
+.note {
+    font-weight: normal;
+    color: red;
+    font-size: 12px;
+}
+
+.loginlink {
+    text-align: center;
+}
+
+.loginlink a {
+    color: #F00;
+    text-transform: uppercase;
+}
+
+.btn-success {
+    color: #fff;
+    background-color: #009688;
+    border-color: #009688;
+}
+
+.logohead .logotext {
+    float: left;
+    padding-left: 8px;
+    padding-top: 27px;
+}
+
+.logohead .logotext h3,
+h4 {
+    padding: 0px;
+    margin: 0px;
+}
+
+.loginright .logohead {
+    float: left;
+    margin-bottom: 15px;
+    border-bottom: 1px solid #d2c157;
+    width: 100%;
+}
+
+.logohead .logotext h3 {
+    color: #009688;
+    font-size: 22px;
+    padding: 0px 0px 8px 0px;
+}
+
+ul.list li:before {
+    content: "\f0c8";
+    position: absolute;
+    left: 3px;
+    font-family: FontAwesome;
+    color: #009688;
+    font-size: 10px;
+    margin-top: 3px;
+}
+
+ul.list {
+    list-style: none;
+    margin: 0px;
+    padding: 0px
+}
+
+ul.list li {
+    padding: 0px 0px 6px 25px;
+    position: relative;
+}
+
+.margin20 {
+    margin-top: 20px
+}
+
+.button_cont {
+    position: absolute;
+    bottom: 10px;
+}
+
+.example_f {
+    border-radius: 25px;
+    background: linear-gradient(to right, #67b26b, #4ca2cb) !important;
+    border: none;
+    color: #FFFFFF;
+    text-align: center;
+    font-size: 16px;
+    padding: 12px;
+    transition: all 0.4s;
+    cursor: pointer;
+    margin: 5px;
+}
+
+.example_f span {
+    cursor: pointer;
+    display: inline-block;
+    position: relative;
+    transition: 0.4s;
+}
+
+.example_f span:after {
+    content: '\00bb';
+    position: absolute;
+    opacity: 0;
+    top: 0;
+    right: -20px;
+    transition: 0.5s;
+}
+
+.example_f:hover span {
+    padding-right: 25px;
+}
+
+.example_f:hover span:after {
+    opacity: 1;
+    right: 0;
+}

@@ -1,0 +1,89 @@
+<div class="adminlogin marginmin1">
+    <div class="bgimagesbg">
+        <div class="col-md-7 leftmargin">
+            <div class="loginbox topmrgin">
+                <div class="row">
+                    <div class="col-md-5">
+                        <div class="loginright">
+                            <div class="logohead">
+                                <div class="logo"> <img src="assets/images/new-logo.png"> </div>
+                                <div class="logotext">
+                                    <h3>Message Board</h3>
+                                    <h4>Mandi Parishad</h4>
+                                </div>
+                            </div>
+                            <h3>Instructions for Login</h3>
+                            <ul class="list">
+                                <li>User will have to select the Group Name & User name from drop-down lists and fill
+                                    Password in the respective field correctly and click on <strong>Login</strong>
+                                    button.</li>
+                                <li>After clicking on button User will be redirected to his/her Message Board. User can
+                                    proceed accordingly.</li>
+                            </ul>
+                            <div class="text-left">
+                                <div class="button_cont" align="center"><a class="example_f" routerLink="/admin"
+                                        rel="Admin Login"><span>Click here to Admin
+                                            Login</span></a></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-7">
+                        <div class="loginform">
+                            <h3 class="text">User Login</h3>
+                            <div class="row">
+                                <form #loginData="ngForm">
+                                    <div class="col-md-12">
+                                        <div class="form-group">
+                                            <label class="">Select Group</label>
+                                            <select class="form-control" name="groupID" ngModel
+                                                [(ngModel)]="defaultgroup" (change)="onSelect($event.target.value)">
+                                                <option value="0" selected disabled>--Select--</option>
+                                                <option *ngFor="let k of groupData" value="{{k.groupId}}">
+                                                    {{k.groupName}}
+                                                </option>
+                                            </select>
+                                            <span *ngIf="groupID?.dirty" class=text-danger>Group Name is
+                                                required.</span>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-12">
+                                        <div class="form-group">
+                                            <label class="">User Name</label>
+                                            <select class="form-control" name="officeName" ngModel [(ngModel)]="defaultname">
+                                                <option value="0" selected disabled>--Select--</option>
+                                                <option *ngFor="let k of users" value="{{k.userName}}">{{k.userName}}
+                                                </option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-12">
+                                        <div class="form-group">
+                                            <label class="">Password</label>
+                                            <input name="Password" ngModel #Password="ngModel" type="password" required
+                                                class="form-control" [ngClass]="{'border-danger':!Password?.valid && Password?.touched,
+                                        'border-success':Password?.valid && Password?.touched}">
+                                            <span
+                                                *ngIf="Password?.errors?.required &&(Password?.dirty || Password?.touched)"
+                                                class="text-danger">Password is required.</span>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-7">
+                                        <button (click)="login(loginData)" [disabled]="loginData.invalid"
+                                            class="btn btn-primary  btn-rounded active px-4">Login</button>
+                                        <button type="reset" class="btn btn-warning btn-rounded">Reset</button>
+                                        </div>
+                                    <div class="col-md-5 margin20"><a href="">Forgot Password?</a></div>
+                                </form>
+                            </div>
+                            <div class="note">
+                                <strong>Note:</strong> In case User has forgotten his/her password then click on Forgot
+                                Password? link and do the needful to recover the password.
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

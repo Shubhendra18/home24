@@ -1,0 +1,151 @@
+<app-navbar></app-navbar>
+<div class="app-body">
+    <app-sidebar></app-sidebar>
+    <main class="main">
+        <app-bredcrum></app-bredcrum>
+
+        <div class="container-fluid">
+            <div id="ui-view">
+                <div>
+                    <div class="animated fadeIn">
+                        <div class="card card-default">
+                            <div class="card-header">
+                                <div class="panel-heading">Manage Group</div>
+                                <div class="card-header-actions"> </div>
+                            </div>
+                            <div class="card-body">
+                                <form #groupMasterData="ngForm">
+                                    <div class="row">
+                                        <div class="form-group col-sm-8">
+                                            <label class="">Group Name *</label>
+                                            <input type="hidden" [(ngModel)]="userId" name="userId">
+                                            <input type="hidden" value="0" name="transId" ngModel>
+                                            <input placeholder="Enter New Group Name" name="groupName" ngModel
+                                                #groupName="ngModel" type="text" required class="form-control"
+                                                [ngClass]="{'border-danger':!groupName?.valid && groupName?.touched,'border-success':groupName?.valid && groupName?.touched}">
+                                            <span
+                                                *ngIf="groupName?.errors?.required && (groupName?.dirty || groupName?.touched)"
+                                                class=text-danger>Group Name is required.</span>
+                                        </div>
+                                        <div class="form-group col-sm-2">
+                                            <label>&nbsp;</label>
+                                            <input type="reset" value="Save" (click)="addUserMaster(groupMasterData)"
+                                                [disabled]="groupMasterData.invalid"
+                                                class="btn btn-square btn-block btn-primary active">
+                                        </div>
+                                        <div class="form-group col-sm-2">
+                                            <label>&nbsp;</label>
+                                            <input type="reset" value="Reset"
+                                                class="btn btn-square btn-block btn-danger active">
+                                        </div>
+                                    </div>
+                                </form>
+                                <table datatable [dtOptions]="dtOptions" [dtTrigger]="dtTrigger"
+                                    class="table table-bordered table-striped">
+                                    <thead>
+                                        <tr>
+                                            <th>Sl.No.</th>
+                                            <th>Group Name</th>
+                                            <th>No. of User</th>
+                                            <!-- <th style="width:8%;">Increase Rank</th>
+                                                <th style="width:8%;">Decrease Rank</th> -->
+                                            <th>Edit</th>
+                                            <th>Delete</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody cdkDropList [cdkDropListData]="groupData"
+                                        (cdkDropListDropped)="onDrop($event)">
+                                        <tr *ngFor="let k of groupData;index as i;trackBy:trackByName" cdkDrag>
+                                            <td class="text-center" style="width:5%;"><strong>{{i+1}}</strong></td>
+                                            <td>{{k.groupName}}</td>
+                                            <td class="text-center" style="width:10%;">4</td>
+                                            <!-- <td class="text-center" style="width:5%;">
+                                                    <input type="image" src="assets/images/Up.png">
+                                                </td>
+                                                <td class="text-center" style="width:5%;">
+                                                    <input type="image" src="assets/images/Down.png">
+                                                </td> -->
+                                            <td class="text-center" style="width:9%;">
+                                                <button class="btn btn-primary" title="Edit Group Name"
+                                                    data-target="#editGroup" data-toggle="modal"
+                                                    (click)="toUpdate(k.groupName,k.groupId)">
+                                                    <i class="fa fa-edit"></i>
+                                                </button>
+                                            </td>
+                                            <td class="text-center" style="width:5%;" title="Delete Group">
+                                                <button class="btn btn-danger" data-target="#deleteGroup"
+                                                    (click)="toUpdate(k.groupName,k.groupId)" data-toggle="modal">
+                                                    <i class="fa fa-trash"></i>
+                                                </button>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+</div>
+
+<div class="modal fade" id="editGroup" tabindex="-1" role="dialog" aria-labelledby="modelTitleId" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header bg-warning text-white">
+                <h5 class="modal-title">Edit Group Name</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <form #editgroupMasterData="ngForm">
+                <div class="modal-body">
+                    <div class="form-group">
+                        <label class="">Group Name *</label>
+                        <input type="hidden" [(ngModel)]="userId" name="userId">
+                        <input type="hidden" [(ngModel)]="groupId" name="transId">
+                        <input placeholder="Enter Group Name" name="groupName" [(ngModel)]="toUpdateGroup"
+                            #ugroupName="ngModel" type="text" required class="form-control"
+                            [ngClass]="{'border-danger':!ugroupName?.valid && ugroupName?.touched,'border-success':ugroupName?.valid && ugroupName?.touched}">
+                        <span *ngIf="ugroupName?.errors?.required && (ugroupName?.dirty || ugroupName?.touched)"
+                            class=text-danger>Group Name is required.</span>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-dark" data-dismiss="modal">Close</button>
+                    <button id="btnUpdate" type="button" class="btn btn-primary"
+                        (click)="editUserMaster(editgroupMasterData)"
+                        [disabled]="editgroupMasterData.invalid || !editgroupMasterData?.dirty">Update &
+                        Save</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+<div class="modal fade" id="deleteGroup" tabindex="-1" role="dialog" aria-labelledby="modelTitleId" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header bg-danger text-white">
+                <h5 class="modal-title">Delete Group Name</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <form #deletegroupMasterData="ngForm">
+                <div class="modal-body">
+                    <h4>Are You Sure To Delete This Group</h4>
+                    <br>
+                    <b>Group Name :</b> {{toUpdateGroup}}
+                    <input type="hidden" [(ngModel)]="groupId" name="groupId" ngModel>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-dark" data-dismiss="modal">Close</button>
+                    <button id="btnUpdate" type="button" class="btn btn-danger"
+                        (click)="deleteUserMaster(deletegroupMasterData.value)">Delete Group
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

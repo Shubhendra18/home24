@@ -1,0 +1,38 @@
+<header class="app-header navbar" id="header">
+    <button class="navbar-toggler sidebar-toggler d-lg-none mr-auto" type="button" data-toggle="sidebar-show"> <span
+            class="navbar-toggler-icon"></span> </button>
+    <a class="navbar-brand" href="#"> <img class="navbar-brand-full" src="assets/images/new-logo.png" width="48"
+            height="48" alt="Mandi Parishad"> <img class="navbar-brand-minimized" src="assets/images/new-logo.png"
+            width="48" height="48" alt="Mandi Parishad">
+        <div class="brandtittle">
+            <h3> MESSAGE </h3>
+            <h4> BOARD</h4>
+        </div>
+    </a>
+    <button class="navbar-toggler sidebar-toggler d-md-down-none" type="button" data-toggle="sidebar-lg-show"> <span
+            class="navbar-toggler-icon"></span> </button>
+    <ul class="nav navbar-nav d-md-down-none">
+        <h2 class="msgboard">MANDI PAPARISHAD</h2>
+    </ul>
+    <ul class="nav navbar-nav ml-auto">
+        <li class="nav-item"><a href="#" data-toggle="modal" data-target="#changetheme"
+                class="btn btn-success mb-1"><span class="icon-loop"></span> <span class="thnone">Theme</span></a></li>
+        <li class="nav-item"><button routerLink="#" id="fullscreen-button"
+                class="full-screen-link btn btn-outline-dark"><span class="icon-size-fullscreen"></span> </button></li>
+        <li class="nav-item dropdown">
+            <a class="nav-link nav-link" data-toggle="dropdown" href="#" role="button" aria-haspopup="true"
+                aria-expanded="false">
+                <div *ngIf="pic;then im;else tx"></div>
+                <img class="img-avatar xs-hide" src="assets/images/user.jpg">
+                <strong class="Welcome"> Welcome :</strong>
+                <i class="nav-icon icon-arrow-down"></i>
+                <!-- <img class="img-avatar" src="img/avatars/6.jpg" alt="admin@bootstrapmaster.com">-->
+            </a>
+            <div class="dropdown-menu dropdown-menu-right">
+                <!-- <div class="dropdown-divider"> </div>-->
+                <a class="dropdown-item" href="change-password.html"><i class="nav-icon icon-lock"></i>Change
+                    Password</a> <a class="dropdown-item" routerLink="/admin"><i class="icon-power"></i>Logout</a>
+            </div>
+        </li>
+    </ul>
+</header>

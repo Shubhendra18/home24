@@ -1,0 +1,98 @@
+<app-navbar></app-navbar>
+<div class="app-body">
+    <app-sidebar></app-sidebar>
+    <main class="main">
+        <app-bredcrum></app-bredcrum>
+
+        <div class="container-fluid">
+            <div id="ui-view">
+                <div>
+                    <div class="animated fadeIn">
+                        <div class="card card-default">
+                            <div class="card-header">
+                                <div class="panel-heading">New User</div>
+                            </div>
+                            <div class="card-body">
+                                <form #addUser="ngForm">
+                                    <div class="row">
+                                        <div class="form-group col-sm-4">
+                                            <label> Group<span class="text-danger"><strong> *</strong></span></label>
+                                            <select class="form-control" name="groupID" ngModel required
+                                                [(ngModel)]="defaultgroup">
+                                                <option value="0" selected disabled>--Select--</option>
+                                                <option *ngFor="let k of groupData" value="{{k.groupId}}">
+                                                    {{k.groupName}}
+                                                </option>
+                                            </select>
+                                            <span
+                                                *ngIf="groupID?.errors?.required && (groupID?.dirty || groupID?.touched)"
+                                                class=text-danger>Group Name is required.</span>
+                                        </div>
+                                        <div class="form-group col-sm-4">
+                                            <label>User Name<span class="text-danger"><strong> *</strong></span></label>
+                                            <input (change)="onChange($event)" name="officeName" ngModel
+                                                #officeName="ngModel" type="text" maxlength="25" required
+                                                class="form-control" [ngClass]="{'border-danger':!officeName?.valid && officeName?.touched,
+                                    'border-success':officeName?.valid && officeName?.touched}">
+                                            <span
+                                                *ngIf="officeName?.errors?.required && (officeName?.dirty || officeName?.touched)"
+                                                class=text-danger>User Name is required.</span>
+                                            <span class=text-danger *ngIf="alreadytaken">User Name is Already
+                                                Taken.</span>
+                                        </div>
+                                        <div class="form-group col-sm-4">
+                                            <label>Mobile No.<span class="text-danger"><strong>
+                                                        *</strong></span></label>
+                                            <input name="mobileNo" ngModel #mobileNo="ngModel" type="text"
+                                                maxlength="10" required class="form-control" [ngClass]="{'border-danger':!mobileNo?.valid && mobileNo?.touched,
+                                    'border-success':mobileNo?.valid && mobileNo?.touched}">
+                                            <span
+                                                *ngIf="mobileNo?.errors?.required && (mobileNo?.dirty || mobileNo?.touched)"
+                                                class=text-danger>Mobile No is required.</span>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="form-group col-sm-4">
+                                            <label>Password<span class="text-danger"><strong> *</strong></span></label>
+                                            <input name="password" ngModel #password="ngModel" type="password"
+                                                maxlength="25" required class="form-control" [ngClass]="{'border-danger':!password?.valid && password?.touched,
+                                    'border-success':password?.valid && password?.touched}">
+                                            <span
+                                                *ngIf="password?.errors?.required && (password?.dirty || password?.touched)"
+                                                class=text-danger>Password is required.</span>
+                                        </div>
+                                        <div class="form-group col-sm-4">
+                                            <label>Confirm Password<span class="text-danger"><strong>
+                                                        *</strong></span></label>
+                                            <input name="confpassword" ngModel #confpassword="ngModel" type="password"
+                                                maxlength="25" required class="form-control" [ngClass]="{'border-danger':!confpassword?.valid && confpassword?.touched,
+                                                'border-success':confpassword?.valid && confpassword?.touched}">
+                                            <span
+                                                *ngIf="confpassword?.errors?.required && (confpassword?.dirty || confpassword?.touched)"
+                                                class=text-danger>Confirm Password is required.</span>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="form-group col-sm-12">
+                                            <input type="submit" value="Add User" (click)="addNewUser(addUser)"
+                                                [disabled]="addUser.invalid" class="btn btn-square btn-primary active">
+                                            &nbsp;
+                                            <input type="reset" value="Reset" class="btn btn-square btn-danger active">
+                                        </div>
+                                        <div class="form-group col-sm-12">
+                                            <div class="alert alert-danger"> <span class="f_link">* <em>New Password
+                                                        length
+                                                        must be between 6-15 characters.<br>
+                                                        It should be a combination of alphabets, digits and special
+                                                        characters.</em></span> </div>
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+</div>

@@ -1,0 +1,138 @@
+<app-navbar></app-navbar>
+<div class="app-body">
+    <app-sidebar></app-sidebar>
+    <main class="main">
+        <app-bredcrum></app-bredcrum>
+
+        <div class="container-fluid">
+                <div id="ui-view">
+                    <div>
+                        <div class="animated fadeIn">
+                            <div class="card card-default">
+                                <div class="card-header">
+                                    <div class="panel-heading">Inbox</div>
+                                    <div class="card-header-actions">
+                                        <div class="priority"> <span class="priority-normal"> <i
+                                                    class="fa fa-circle text-info"></i> <strong>Normal</strong> </span>
+                                            <span class="priority-medium"> <i class="fa fa-circle text-success"></i>
+                                                <strong>Medium </strong></span> <span class="priority-high"> <i
+                                                    class="fa fa-circle text-danger"></i> <strong>High </strong></span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="card-body">
+                                    <div class="row">
+                                        <div class="form-group col-sm-12">
+                                            <div class="email-app mb-4">
+                                                <!--<nav>
+          <a class="btn btn-danger btn-block" href="page-inbox-compose.html">New Email</a>
+          <ul class="nav">
+          <li class="nav-item">
+          <a class="nav-link" href="#">
+          <i class="fa fa-inbox"></i> Inbox
+          <span class="badge badge-danger">4</span>
+          </a>
+          </li>
+          <li class="nav-item">
+          <a class="nav-link" href="#">
+          <i class="fa fa-star"></i> Stared</a>
+          </li>
+          <li class="nav-item">
+          <a class="nav-link" href="#">
+          <i class="fa fa-rocket"></i> Sent</a>
+          </li>
+          <li class="nav-item">
+          <a class="nav-link" href="#">
+          <i class="fa fa-trash-o"></i> Trash</a>
+          </li>
+          <li class="nav-item">
+          <a class="nav-link" href="#">
+          <i class="fa fa-bookmark"></i> Important
+          <span class="badge badge-info">5</span>
+          </a>
+          </li>
+          <li class="nav-item">
+          <a class="nav-link" href="#">
+          <i class="fa fa-inbox"></i> Inbox
+          <span class="badge badge-danger">4</span>
+          </a>
+          </li>
+          </ul>
+          </nav>-->
+                                                <main class="inbox">
+                                                    <div class="toolbar">
+                                                        <div class="btn-group">
+                                                            <button title="Select All" class="btn btn-light" type="button">
+                                                                <input type="checkbox" value="check1">
+                                                            </button>
+                                                            <!--<button class="btn btn-light" type="button"> <span class="fa fa-star"></span> </button>
+                                    <button class="btn btn-light" type="button"> <span class="fa fa-star-o"></span> </button>
+                                    <button class="btn btn-light" type="button"> <span class="fa fa-bookmark-o"></span> </button>-->
+                                                        </div>
+                                                        <!--<div class="btn-group">
+                                    <button title="Reply" class="btn btn-light" type="button"> <span class="fa fa-mail-reply"></span> </button>
+                                    <button title="Reply All" class="btn btn-light" type="button"> <span class="fa fa-mail-reply-all"></span> </button>
+                                    <button title="forward" class="btn btn-light" type="button"> <span class="fa fa-mail-forward"></span> </button>
+                                  </div>-->
+                                                        <button title="Trash" class="btn btn-light" type="button"> <span
+                                                                class="fa fa-trash-o"></span> </button>
+                                                        <button title="Move to Archive" class="btn btn-light" type="button">
+                                                            <span class="fa fa-file-archive-o"></span> </button>
+                                                        <!--<div class="btn-group">
+                                    <button class="btn btn-light dropdown-toggle" type="button" data-toggle="dropdown"> <span class="fa fa-tags"></span> <span class="caret"></span> </button>
+                                    <div class="dropdown-menu"> <a class="dropdown-item" href="#">add label <span class="badge badge-danger"> Home</span> </a> <a class="dropdown-item" href="#">add label <span class="badge badge-info"> Job</span> </a> <a class="dropdown-item" href="#">add label <span class="badge badge-success"> Clients</span> </a> <a class="dropdown-item" href="#">add label <span class="badge badge-warning"> News</span> </a> </div>
+                                  </div>-->
+                                                        <!--<div class="btn-group float-right">
+                                    <button class="btn btn-light" type="button"> <span class="fa fa-chevron-left"></span> </button>
+                                    <button class="btn btn-light" type="button"> <span class="fa fa-chevron-right"></span> </button>
+                                  </div>-->
+                                                    </div>
+                                                    <ul class="messages search-result">
+                                                        <li class="message" *ngFor="let k of allmails"> <a href="#">
+                                                                <div class="actions"> <span class="action">
+                                                                        <input type="checkbox" value="check1">
+                                                                    </span>
+                                                                    <span class="priority-high action"
+                                                                        [ngSwitch]="k.priority">
+                                                                        <i *ngSwitchCase="'0'"
+                                                                            class="fa fa-circle text-info"></i>
+                                                                        <i *ngSwitchCase="'1'"
+                                                                            class="fa fa-circle text-success"></i>
+                                                                        <i *ngSwitchCase="'2'"
+                                                                            class="fa fa-circle text-danger"></i>
+                                                                        <i *ngSwitchDeafult
+                                                                            class="fa fa-circle text-white"></i>
+                                                                    </span>
+                                                                </div>
+                                                                <div class="header"><span
+                                                                        class="user-icon iconBg1">{{getShortName(k.userName|uppercase)}}</span>
+                                                                    <span class="from">{{k.userName}}</span> <span
+                                                                        class="date"><span class="fa fa-bookmark-o"></span>
+                                                                        <span class="fa fa-paper-clip"></span>
+                                                                        {{k.postDate|date}}
+                                                                    </span> </div>
+                                                                <div class="title">
+                                                                    <strong>{{k.subject}}</strong></div>
+                                                                <div class="description"
+                                                                    innerHTML="{{k.message.substring(0,150)}}">
+                                                                </div>
+                                                            </a> </li>
+    
+    
+                                                    </ul>
+                                                </main>
+                                            </div>
+                                        </div>
+    
+                                    </div>
+    
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+    </main>
+</div>
+
+<app-footer></app-footer>

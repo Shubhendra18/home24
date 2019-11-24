@@ -1,0 +1,143 @@
+<app-navbar></app-navbar>
+<div class="app-body">
+    <app-sidebar></app-sidebar>
+    <main class="main">
+        <app-bredcrum></app-bredcrum>
+        <div class="container-fluid">
+            <div id="ui-view">
+                <div>
+                    <div class="animated fadeIn">
+                        <div class="card card-default">
+                            <div class="card-header">
+                                <div class="panel-heading"> Compose New Message</div>
+                                <div class="card-header-actions">
+                                    <div class="priority"> <span class="priority-normal"> <i
+                                                class="fa fa-circle text-info"></i> <strong>Normal</strong> </span>
+                                        <span class="priority-medium">
+                                            <i class="fa fa-circle text-success"></i>
+                                            <strong>Medium </strong>
+                                        </span>
+                                        <span class="priority-high"> <i class="fa fa-circle text-danger"></i>
+                                            <strong>High </strong></span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="card-body">
+                                <div class="row"> </div>
+                                <div class="email-app">
+                                    <main class="message">
+                                        <form #mailBox="ngForm">
+                                            <div class="row">
+                                                <div class="col-lg-6 col-12">
+                                                    <div class="form-group">
+                                                        <label>Priority:</label>
+                                                        <div class="form-control">
+                                                            <table class="priorityTab">
+                                                                <tbody>
+                                                                    <tr>
+                                                                        <td><input type="radio" name="Priority"
+                                                                                value="0" checked="checked" ngModel>
+                                                                            <span><i class="fa fa-circle text-info"></i>
+                                                                                Normal
+                                                                            </span></td>
+                                                                        <td ><input type="radio" name="Priority"
+                                                                                value="1" ngModel>
+                                                                            <span><i
+                                                                                    class="fa fa-circle text-success"></i>
+                                                                                Medium </span></td>
+                                                                        <td><input type="radio" name="Priority"
+                                                                                value="2" ngModel>
+                                                                            <span><i
+                                                                                    class="fa fa-circle text-danger"></i>
+                                                                                High</span></td>
+                                                                    </tr>
+                                                                </tbody>
+                                                            </table>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="col-lg-6 col-12">
+                                                    <div class="form-group">
+                                                        <label>Send SMS Alert:</label>
+                                                        <table class="form-control">
+                                                            <tbody>
+                                                                <tr>
+                                                                    <td>
+                                                                        <input type="radio" name="SMS" value="True"
+                                                                            ngModel>
+                                                                        <label>Yes</label>
+                                                                    </td>
+                                                                    <td><input type="radio" name="SMS" value="False"
+                                                                            ngModel checked="checked">
+                                                                        <label>No</label>
+                                                                    </td>
+                                                                </tr>
+                                                            </tbody>
+                                                        </table>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="row">
+                                                <div class="col-lg-3 col-12">
+                                                    <div class="form-group">
+                                                        <label>Select Group:</label>
+                                                        <select class="form-control" name="groupID" ngModel
+                                                            [(ngModel)]="defaultgroup"
+                                                            (change)="onSelect($event.target.value)">
+                                                            <option value="0" selected disabled>--Select--</option>
+                                                            <option *ngFor="let k of groupData" value="{{k.groupId}}">
+                                                                {{k.groupName}}
+                                                            </option>
+                                                        </select>
+                                                    </div>
+                                                </div>
+                                                <div class="col-lg-9 col-12">
+                                                    <div class="form-group">
+                                                        <label>To:</label>
+                                                        <ng-multiselect-dropdown name="Rid" ngModel
+                                                            [placeholder]="'Recipient name'" [data]="dropdownList"
+                                                            [(ngModel)]="selectedItems" [settings]="dropdownSettings"
+                                                            (onSelect)="onItemSelect($event)"
+                                                            (onSelectAll)="onSelectAll($event)">
+                                                        </ng-multiselect-dropdown>
+
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="row">
+                                                <div class="col-lg-12 col-12">
+                                                    <div class="form-group">
+                                                        <label>Subject:</label>
+                                                        <input name="Subject" placeholder="Subject" type="text" ngModel class="form-control">
+                                                        <input name="Sid" type="hidden" ngModel [(ngModel)]="Sid">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="row">
+                                                <div class="col-lg-12 col-12">
+                                                    <div class="form-group">
+                                                        <label>Message:</label>
+                                                        <quill-editor name="Message" ngModel [modules]="config"
+                                                            [style]="{height: '400px'}"></quill-editor>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="row">
+                                                <div class="col">
+                                                    <input type="submit" value="Send"
+                                                        class="btn btn-square btn-primary active"
+                                                        (click)="MailSend(mailBox)">
+                                                </div>
+                                            </div>
+                                        </form>
+                                    </main>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+</div>
+<app-footer></app-footer>

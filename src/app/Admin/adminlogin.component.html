@@ -1,0 +1,77 @@
+<div class="adminlogin marginmin1">
+    <div class="bgimagesbg">
+
+        <div class="col-md-7 leftmargin">
+            <div class="loginbox topmrgin">
+                <div class="row">
+                    <div class="col-md-5">
+                        <div class="loginright">
+                            <div class="logohead">
+                                <div class="logo"> <img src="assets/images/new-logo.png"> </div>
+                                <div class="logotext">
+                                    <h3> Message Board</h3>
+                                    <h4>Mandi Parishad</h4>
+                                </div>
+                            </div>
+                            <h3>Instructions for Login</h3>
+                            <ul class="list">
+                                <li>User will have to fill the User name &amp; Password correctly in the respective
+                                    fields and click on <strong>Login</strong> button. After which he/she will be
+                                    redirected to Dashboard. User can proceed accordingly.</li>
+                            </ul>
+                            <div class="text-center">
+                                <div class="button_cont"><a class="example_f" routerLink="/user"
+                                        rel="Admin Login"><span>Click
+                                            here to User Login</span></a></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-7">
+                        <div class="loginform">
+                            <h3 class="text">Admin Login </h3>
+                            <form #loginData="ngForm" name="loginData">
+                                <div class="row">
+                                    <div class="col-md-12">
+                                        <div class="form-group">
+                                            <label class="">User Name *</label>
+                                            <input name="officeName" ngModel #officeName="ngModel" type="text"
+                                                maxlength="25" required class="form-control" [ngClass]="{'border-danger':!officeName?.valid && officeName?.touched,
+                                            'border-success':officeName?.valid && officeName?.touched}">
+                                            <span
+                                                *ngIf="officeName?.errors?.required && (officeName?.dirty || officeName?.touched)"
+                                                class=text-danger>User Name is required.</span>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-12">
+                                        <div class="form-group">
+                                            <label class="">Password *</label>
+                                            <input name="Password" ngModel #Password="ngModel" type="password" required
+                                                class="form-control" [ngClass]="{'border-danger':!Password?.valid && Password?.touched,
+                                                'border-success':Password?.valid && Password?.touched}">
+                                            <span
+                                                *ngIf="Password?.errors?.required &&(Password?.dirty || Password?.touched)"
+                                                class="text-danger">Password is required.</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-7">
+                                        <div class="form-group">
+                                            <button (click)="login(loginData)" [disabled]="loginData.invalid"
+                                                class="btn btn-primary  btn-rounded active px-4">Login</button>
+                                            <button type="reset" class="btn btn-warning btn-rounded">Reset</button>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-5 margin20"><a href="">Forgot Password?</a></div>
+                                </div>
+                            </form>
+                            <div class="note"> <strong>Note:</strong> In case User has forgotten his/her password then
+                                click on Forgot Password link and do the needful to recover the password. </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

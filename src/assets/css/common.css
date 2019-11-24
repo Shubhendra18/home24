@@ -1,0 +1,15 @@
+	ul.themewrap{list-style:none;text-align:center;margin: 0px;padding: 0px;}
+	ul.themewrap li{display: inline-block;}
+ul.themewrap li a img{ max-width:100%}
+ul.themewrap li{width: 33%;padding: 0px 15px;margin-bottom: 0px;}	
+ul.themewrap li a{ text-transform:uppercase; text-decoration:none}
+/*ul.themewrap li a:hover{ color:#fff}*/
+ul.themewrap li a h3{background: transparent;font-size: 14px;font-weight: 700;padding: 12px;margin: 0px;}	
+.modal-warning .modal-header {
+    color: #2d2d2d;
+    background-color: #ececec;
+}
+.modal-header {
+    border-bottom: 0px solid #f1e4a9;
+
+}

@@ -1,0 +1,155 @@
+@charset "utf-8";
+/* CSS Document */
+@media only screen and (max-width:1199px) {
+ 
+
+}
+@media only screen and (max-width: 1027px) {
+ 
+}
+@media only screen and (max-width: 990px) {
+
+iframe{ width:100% !important; height:inherit !important}
+}
+@media only screen and (max-width:870px) {
+ 
+}
+@media only screen and (max-width: 768px) {
+.app-footer {
+    position: relative !important;
+
+}
+.app-header .navbar-toggler {
+    margin-left: 15px !important;
+}
+.main .container-fluid #ui-view {
+    margin-bottom: 23px;
+}
+.main .container-fluid {
+    padding: 0px 15px 0px 15px !important;
+}
+		.adminlogin .header .loginlogo {
+    width: 100px;
+}
+strong.Welcome{ display:none}
+.adminlogin .header .loginlogo img {
+    width:100%;
+    padding-right: 3px;
+    margin-bottom: 8px;
+}
+.adminlogin .leftmargin {
+    margin-left: 0% !important;
+    margin-bottom: 15px;
+}
+.loginright {
+    min-height: 360px;
+
+}
+.button_cont {
+    bottom: 25px !important;
+    position: inherit !important;
+    padding-top: 20px;
+}
+.topmrgin {
+    margin-top: 15px !important;
+}
+.loginform {
+    padding: 15px 15px !important;
+}
+.app-header {
+    position: fixed !important;
+
+}
+
+
+}
+@media only screen and (max-width:650px) {
+.sidebar .nav-link {
+    color: #ffffff;
+
+}	
+}
+
+@media only screen and (max-width:540px) {
+.app-header .navbar-brand {
+    margin-left: 66px !important;
+
+}
+.app-header .navbar-brand .brandtittle h3 {
+    font-size: 14px;
+
+}
+.app-header .navbar-brand .brandtittle h4 {
+    font-size: 12px;
+}
+img.xs-hide{ display:none !important}
+span.thnone{ display:none !important}
+.sidebar .nav {
+    width: 100%;
+}
+.sidebar {
+    width:100%;
+
+}
+	.adminlogin .header .loginlogo {
+    display: inline-block;
+    margin-right: 5px;
+    width: 95px;
+    margin-left: 15px;
+    margin-top: 15px;
+}
+ .adminlogin .header .wraptittle h3 {
+    font-size: 14px;
+    padding: 0px 0px 6px 0px;
+    margin: 0px;
+}
+.adminlogin .header .wraptittle span{font-size: 13px;font-weight: 500;}	
+.adminlogin .header .wraptittle {
+    float: left;
+    width: 64%;
+    line-height: 22px;
+    margin-top: 17px;
+}
+.card-body {
+    padding:15px;
+}
+}
+@media only screen and (max-width:410px) {
+.app-header .nav-item {
+    margin: 0px 8px;
+
+}
+ .breadcrumb {
+    padding: .25rem 1rem;
+    text-align: center;
+}
+.app-header .navbar-brand {
+    left: 0px;
+}
+.main .container-fluid {
+    padding: 0 15px 15px 15px;
+}
+.pb-5, .py-5 {
+    padding-bottom:0rem!important;
+}
+.pt-5, .py-5 {
+    padding-top:0rem!important;
+}
+h2, .h2 {
+    font-size: 1.4rem;
+}
+.p-4 {
+    padding: 15px 0px !important;
+}
+.app-footer .ml-auto, .mx-auto {
+    margin-left: inherit!important;
+}
+.btn-group, .btn-group-vertical {
+    font-size: 0.8em;
+}
+}
+ @media only screen and (max-width:359px) {
+ 
+}
+ @media only screen and (max-width: 320px) {
+}

@@ -1,0 +1,14 @@
+.pp {
+    color: white;
+    background-color: rgb(164, 214, 124);
+    border-radius: 50%;
+    height: 100%;
+}
+
+.ppp span {
+    height: 30px;
+    width: 30px;
+    padding: 50px;
+    border-radius: 50%;
+
+}
