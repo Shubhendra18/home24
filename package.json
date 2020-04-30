@@ -23,7 +23,7 @@
     "angular-datatables": "^8.0.0",
     "datatables.net": "^1.10.20",
     "datatables.net-dt": "^1.10.20",
-    "jquery": "^3.4.1",
+    "jquery": "^3.5.0",
     "ng-multiselect-dropdown": "^0.2.6",
     "ngx-quill": "^7.3.9",
     "ngx-toastr": "^11.2.1",
